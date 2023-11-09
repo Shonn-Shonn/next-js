@@ -1,0 +1,56 @@
+<!-- index.html -->
+<html>
+  <body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const app = document.getElementById('app');
+
+      const  Name = () => 
+      {
+        return (<h1>My name is wint</h1>);
+      }
+
+      const  Age = () => 
+      {
+        return (<h1>21</h1>);
+      }
+
+      const  Songs = () => 
+      {
+        const songs = ['Be Allright','Someone like u','I like u so much'];
+        return(
+            <ul>
+                {
+                    songs.map((song,index) => 
+                        <Song key={index} value={song}/>
+                    )
+                }
+            </ul>
+        )
+      }
+
+      const Song = (props) => {
+        return (
+            <li>{props.value}</li>
+        )
+      }
+
+      const  HomePage = () =>
+      {
+        return(
+            <>
+            <Name/>
+            <Age/>
+            <Songs/>
+            </>
+        )
+      }
+      ReactDOM.render(<HomePage/>, app);
+    </script>
+  </body>
+</html>
